@@ -36,6 +36,8 @@ public class MoveListApplication {
 			movetyperepository.save(lock);
 			MoveType choke = new MoveType("choke");
 			movetyperepository.save(choke);
+			MoveType sweep = new MoveType("sweep");
+			movetyperepository.save(sweep);
 			
 			Position fullguard = new Position("full guard");
 			positionrepository.save(fullguard);
@@ -47,14 +49,18 @@ public class MoveListApplication {
 			positionrepository.save(mount);
 			Position standing = new Position("standing");
 			positionrepository.save(standing);
+			Position mounted = new Position("mounted");
+			positionrepository.save(mounted);
 			
 			// String name, String videoUrl, String description, MoveType movetype, Position position)
-			Move crosscollar = new Move("Cross collar choke", "https://www.youtube.com/watch?v=5tQmr_iYzBo", "", choke, mount);
+			Move crosscollar = new Move("Cross Collar Choke", "https://www.youtube.com/watch?v=5tQmr_iYzBo", "", choke, mount);
 			moverepository.save(crosscollar);
 			Move americana = new Move("Americana", "https://www.youtube.com/watch?v=Zhh4W24rwrw", "", lock, sidecontrol);
 			moverepository.save(americana);
-			Move doubleleg = new Move("Double leg takedown", "https://www.youtube.com/watch?v=wxNAEByjOoA", "", takedown, standing);
+			Move doubleleg = new Move("Double Leg Takedown", "https://www.youtube.com/watch?v=wxNAEByjOoA", "", takedown, standing);
 			moverepository.save(doubleleg);
+			Move scissorsweep = new Move("The Scissor Sweep", "https://youtu.be/UBf7uF5x8GQ", "", sweep, fullguard);
+			moverepository.save(scissorsweep);
 			
 			// Log all types, positions and moves
 			log.info("fetch all types");

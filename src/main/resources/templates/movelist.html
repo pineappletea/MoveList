@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>List of BJJ techniques</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+</head>
+<body>
+	<h1 th:inline="text"> Brazilian Jiu-Jitsu Techniques </h1>
+	
+	<!-- (String name, String videoUrl, String description, MoveType movetype, Position position)  --> 
+		
+		<table class="table table-striped">
+		<tr> <th>Name</th> <th>Type</th> <th>Position</th> <th>Video URL</th> <th>description</th> <th></th> 
+		<th></th> 
+		<th></th>
+		</tr>
+		<tr th:each="move : ${moves}">
+		<td th:text="${move.name}"></td>
+		<td th:text="${move.movetype}? ${move.movetype.name} : 'Unmarked'"></td>
+		<td th:text="${move.position}? ${move.position.name} : 'Unmarked'"></td>
+		<td th:text="${move.videoUrl}"></td>
+		<td th:text="${move.description}"></td>
+		<input type="hidden" th:value="${move.id}"/>
+		</tr> 
+		</table>
+
+</body>
+</html>
