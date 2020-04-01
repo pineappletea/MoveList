@@ -15,7 +15,6 @@ import harkat.MoveList.domain.MoveUser;
 import harkat.MoveList.domain.Position;
 import harkat.MoveList.domain.PositionRepository;
 import harkat.MoveList.domain.UserRepository;
-import palvelinohjelmointi.Bookstore.domain.Category;
 
 @SpringBootApplication
 public class MoveListApplication {
