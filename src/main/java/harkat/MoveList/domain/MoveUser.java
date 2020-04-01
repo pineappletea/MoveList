@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class User {
+public class MoveUser {
 	
 	@Id
 	@Column(name = "username", nullable = false, unique = true)
@@ -41,12 +41,12 @@ public class User {
 		this.role = role;
 	}
 
-	public User() {
+	public MoveUser() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(String username, String password, String role) {
+	public MoveUser(String username, String password, String role) {
 		super();
 		this.username = username;
 		this.password = password;

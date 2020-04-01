@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import harkat.MoveList.domain.UserRepository;
-import harkat.MoveList.domain.User;
+import harkat.MoveList.domain.MoveUser;
 
 @Service
 public class UserDetailServiceImpl implements UserDetailsService  {
@@ -23,7 +23,7 @@ public class UserDetailServiceImpl implements UserDetailsService  {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
     {   
-    	User curruser = repository.findByUsername(username);
+    	MoveUser curruser = repository.findByUsername(username);
         UserDetails user = new org.springframework.security.core.userdetails.User(username, curruser.getPassword(), 
         		AuthorityUtils.createAuthorityList(curruser.getRole()));
         return user;
