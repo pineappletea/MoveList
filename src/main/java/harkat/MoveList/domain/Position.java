@@ -3,6 +3,7 @@ package harkat.MoveList.domain;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,11 +14,14 @@ import javax.persistence.OneToMany;
 public class Position {
 	
 	@Id
+	@Column
     @GeneratedValue(strategy=GenerationType.AUTO)
 	public Long positionid;
 	
+	@Column(name= "name", nullable = false)
 	private String name;
 	
+	@Column
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "position")
 	private List<Move> moves;
 
@@ -47,7 +51,7 @@ public class Position {
 
 	@Override
 	public String toString() {
-		return "Position [positionid=" + positionid + ", name=" + name + ", moves=" + moves + "]";
+		return "Position [positionid=" + positionid + ", name=" + name + "]";
 	}
 
 	public Position(Long positionid, String name, List<Move> moves) {
@@ -60,6 +64,10 @@ public class Position {
 	public Position() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	public Position(String name) {
+		super();
+		this.name = name;
 	}
 	
 	

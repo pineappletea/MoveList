@@ -1,5 +1,6 @@
 package harkat.MoveList.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,12 +13,19 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Move {
+	
+	@Column(name= "name", nullable = false)
 	private String name;
+	
+	@Column(name= "videourl", nullable = true)
 	private String videoUrl;
+	
+	@Column(name= "description", nullable = true)
 	private String description;
 	
 	@Id
 	@GeneratedValue (strategy=GenerationType.AUTO) 
+	@Column(name = "id", nullable = false, unique = true)
 	private long id;
 	
     @ManyToOne
@@ -90,6 +98,16 @@ public class Move {
 		this.videoUrl = videoUrl;
 		this.description = description;
 		this.id = id;
+		this.movetype = movetype;
+		this.position = position;
+	}
+	
+	// constructor without ID
+	public Move(String name, String videoUrl, String description, MoveType movetype, Position position) {
+		super();
+		this.name = name;
+		this.videoUrl = videoUrl;
+		this.description = description;
 		this.movetype = movetype;
 		this.position = position;
 	}

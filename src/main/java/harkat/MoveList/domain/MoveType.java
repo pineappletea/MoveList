@@ -3,6 +3,7 @@ package harkat.MoveList.domain;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,12 +12,16 @@ import javax.persistence.OneToMany;
 
 @Entity
 public class MoveType {
+	
 	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	public Long movetypeid;
 	
+	@Column(name= "name", nullable = false)
 	private String name;
 	
+	@Column
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "movetype")
 	private List<Move> moves;
 
@@ -46,7 +51,7 @@ public class MoveType {
 
 	@Override
 	public String toString() {
-		return "MoveType [movetypeid=" + movetypeid + ", name=" + name + ", moves=" + moves + "]";
+		return "MoveType [movetypeid=" + movetypeid + ", name=" + name + "]";
 	}
 
 	public MoveType(Long movetypeid, String name, List<Move> moves) {
@@ -59,6 +64,11 @@ public class MoveType {
 	public MoveType() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+	
+	public MoveType(String name) {
+		super();
+		this.name = name;
 	}
 
 	
