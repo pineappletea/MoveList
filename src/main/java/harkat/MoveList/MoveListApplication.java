@@ -41,6 +41,8 @@ public class MoveListApplication {
 			movetyperepository.save(choke);
 			MoveType sweep = new MoveType("sweep");
 			movetyperepository.save(sweep);
+			MoveType positioning = new MoveType("positioning");
+			movetyperepository.save(positioning);
 			
 			// Positions
 			Position fullguard = new Position("full guard");
@@ -53,19 +55,27 @@ public class MoveListApplication {
 			positionrepository.save(mount);
 			Position standing = new Position("standing");
 			positionrepository.save(standing);
-			Position mounted = new Position("mounted");
-			positionrepository.save(mounted);
 			
 			// Moves
 			// String name, String videoUrl, String description, MoveType movetype, Position position)
-			Move crosscollar = new Move("Cross Collar Choke", "https://www.youtube.com/watch?v=5tQmr_iYzBo", "", choke, mount);
+			Move crosscollar = new Move("Cross Collar Choke", "https://www.youtube.com/watch?v=5tQmr_iYzBo", "", choke, mount, true);
 			moverepository.save(crosscollar);
-			Move americana = new Move("Americana", "https://www.youtube.com/watch?v=Zhh4W24rwrw", "", lock, sidecontrol);
+			Move americana = new Move("Americana", "https://www.youtube.com/watch?v=Zhh4W24rwrw", "", lock, sidecontrol, true);
 			moverepository.save(americana);
-			Move doubleleg = new Move("Double Leg Takedown", "https://www.youtube.com/watch?v=wxNAEByjOoA", "", takedown, standing);
+			Move doubleleg = new Move("Double Leg Takedown", "https://www.youtube.com/watch?v=wxNAEByjOoA", "", takedown, standing, true);
 			moverepository.save(doubleleg);
-			Move scissorsweep = new Move("The Scissor Sweep", "https://youtu.be/UBf7uF5x8GQ", "", sweep, fullguard);
+			Move scissorsweep = new Move("The Scissor Sweep", "https://youtu.be/UBf7uF5x8GQ", "", sweep, fullguard, true);
 			moverepository.save(scissorsweep);
+			Move trianglechoke = new Move("Triangle Choke", "https://www.youtube.com/watch?v=ICiYVLNRsRU", "", choke, fullguard, true);
+			moverepository.save(trianglechoke);
+			Move armbar = new Move("Armbar from mount", "https://www.youtube.com/watch?v=5uuU0LfsZOY", "", lock, mount, true);
+			moverepository.save(armbar);
+			Move bridgeandroll = new Move("Bridge and Roll Escape", "https://www.youtube.com/watch?v=p6QOSXVfsiI", "", positioning, mount, false);
+			moverepository.save(bridgeandroll);
+			Move guardreplacement = new Move("Guard Replacement with Hip Escape", "https://youtu.be/1iZjnbCun0A", "", positioning, sidecontrol, false);
+			moverepository.save(guardreplacement);
+			 
+			
 			
 			// Log all types, positions and moves
 			log.info("fetch all types");
