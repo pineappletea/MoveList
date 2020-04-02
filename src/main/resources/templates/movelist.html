@@ -19,7 +19,7 @@
 		<td th:text="${move.movetype}? ${move.movetype.name} : 'Unmarked'"></td>
 		<td th:text="${move.inposition}"></td>
 		<td th:text="${move.position}? ${move.position.name} : 'Unmarked'"></td>
-		<td th:text="${move.videoUrl}"></td>
+		<td> <a th:href="${move.videoUrl}" th:text="${move.videoUrl}"></a></td>
 		<td th:text="${move.description}"></td>
 		
 		<td sec:authorize="hasAuthority('ADMIN')">

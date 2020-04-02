@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Edit Move</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+	<h1>Edit move</h1>
+	
+	<form action="#" th:action="@{../save/}" th:object=${move}
+		method="post">
+		<p>
+			Name: <input type="text" th:field="*{name}" />
+		</p>
+		<p>
+			VideoURL: <input type="text" th:field="*{videoUrl}" />
+		</p>
+		<p>
+			Description: <input type="text" th:field="*{description}" />
+		</p>
+		<input type="hidden" th:field="*{id}" class="form-control"/>
+		
+		<label for="movetypelist">Type</label>
+			<select id="movetypelist" th:field="*{movetype}" class="form-control">
+			<option th:each="movetype: ${movetypes}"
+				th:value="${movetype.movetypeid}" th:text="${movetype.name}"></option>
+			</select> 
+		<label for="positionlist">Position</label> 
+		<select id="positionlist"
+			th:field="*{position}" class="form-control">
+			<option th:each="position: ${positions}"
+				th:value="${position.positionid}" th:text="${position.name}">
+			</option>
+		</select> <label for="inpositionswitch">In position?</label> <select
+			id="positionlist" th:field="*{inposition}" class="form-control">
+			<option th:value="true" th:text="True"></option>
+			<option th:value="false" th:text="False"></option>
+		</select>
+		<p>
+		<input type ="submit" class="btn btn-success" value="Save"></input>
+		</p>
+	</form>
+
+</body>
+</html>
