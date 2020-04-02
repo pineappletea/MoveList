@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
 <title>List of BJJ techniques</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -21,9 +21,21 @@
 		<td th:text="${move.position}? ${move.position.name} : 'Unmarked'"></td>
 		<td th:text="${move.videoUrl}"></td>
 		<td th:text="${move.description}"></td>
+		
+		<td sec:authorize="hasAuthority('ADMIN')">
+			<a th:href="@{/deletemove/{id}(id=${move.id})}" class="btn btn-danger">Delete</a>
+			</td>
+		<td sec:authorize="hasAuthority('ADMIN')">
+			<a th:href="@{/editmove/{id}(id=${move.id})}" class="btn btn-success">Edit</a>
+			</td>
 		<input type="hidden" th:value="${move.id}"/>
 		</tr> 
 		</table>
+		
+		<a sec:authorize="hasAuthority('ADMIN')" th:href="@{/addmove}" class="btn btn-success" >Add move</a>
+		<form sec:authorize="hasAuthority('ADMIN')" th:action="@{/logout}" method="post">
+			<input type="submit" value="Sign Out" class="btn btn-danger"/>
+		</form>
 
 </body>
 </html>

@@ -1,10 +1,44 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Add Move</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
 </head>
 <body>
+
+	<h1>Add Move</h1>
+	<!-- String name, String videoUrl, String description, MoveType movetype, 
+				Position position, boolean inposition -->
+				
+	<form action="#" th:action="@{/addmove}" th:object= ${move} method="post">
+	<p>Name: <input type="text" th:field="${move.name}" /></p>
+	<p>VideoURL: <input type="text" th:field="${move.videoUrl}" /></p>
+	<p>Description: <input type="text" th:field="${move.description}" /></p>
+	<label for="movetypelist">Type</label>
+			 <select id="movetypelist" th:field="*{movetype}" class="form-control">
+       			<option th:each="movetype: ${movetypes}" th:value="${movetype.movetypeid}"
+       			 th:text="${movetype.name}"></option>
+    		</select>
+	
+	<label for="positionlist">Position</label>
+			 <select id="positionlist" th:field="*{position}" class="form-control">
+       			<option th:each="position: ${positions}" th:value="${position.positionid}"
+       			 th:text="${position.name}"></option>
+    		</select>
+    		
+    	<label for="inpositionswitch">In position?</label>
+			 <select id="positionlist" th:field="*{inposition}" class="form-control">
+       			<option th:value="true"
+       			 th:text="True"></option>
+       			 <option th:value="false"
+       			 th:text="False"></option>
+    		</select>
+    
+    		
+    		
+	<p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+	</form>
 
 </body>
 </html>
