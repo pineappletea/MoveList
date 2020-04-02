@@ -8,8 +8,6 @@
 <body>
 
 	<h1>Add Move</h1>
-	<!-- String name, String videoUrl, String description, MoveType movetype, 
-				Position position, boolean inposition -->
 				
 	<form action="#" th:action="@{/addmove}" th:object= ${move} method="post">
 	<p>Name: <input type="text" th:field="${move.name}" /></p>

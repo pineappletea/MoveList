@@ -54,7 +54,7 @@ public class MoveController {
 	// TODO: FRONT
 
 	// Receive and save new move
-	@PreAuthorize("hasAuthority('ADMIN')")
+	// @PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(value = "/addmove", method = RequestMethod.POST)
 	public String saveMove(@ModelAttribute Move move) {
 		moverepository.save(move);
