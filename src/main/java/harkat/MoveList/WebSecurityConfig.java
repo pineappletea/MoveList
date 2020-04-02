@@ -18,6 +18,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailServiceImpl userDetailsService;	
     
+    
+    // Allowing everyone access to everything for the development phase
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http

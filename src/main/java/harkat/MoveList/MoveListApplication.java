@@ -30,6 +30,9 @@ public class MoveListApplication {
 			MoveTypeRepository movetyperepository) {
 		return (args) -> {
 			
+			// Create test data
+			
+			// Types
 			MoveType takedown = new MoveType("takedown");
 			movetyperepository.save(takedown);
 			MoveType lock = new MoveType("lock");
@@ -39,6 +42,7 @@ public class MoveListApplication {
 			MoveType sweep = new MoveType("sweep");
 			movetyperepository.save(sweep);
 			
+			// Positions
 			Position fullguard = new Position("full guard");
 			positionrepository.save(fullguard);
 			Position sidecontrol = new Position("sidecontrol");
@@ -52,6 +56,7 @@ public class MoveListApplication {
 			Position mounted = new Position("mounted");
 			positionrepository.save(mounted);
 			
+			// Moves
 			// String name, String videoUrl, String description, MoveType movetype, Position position)
 			Move crosscollar = new Move("Cross Collar Choke", "https://www.youtube.com/watch?v=5tQmr_iYzBo", "", choke, mount);
 			moverepository.save(crosscollar);

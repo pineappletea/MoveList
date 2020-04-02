@@ -7,7 +7,8 @@ import javax.sql.DataSource;
 
 @Configuration
 public class DatabaseConfig {
-
+	
+	// fetch values from applcation.properties for database login
   @Value("${spring.datasource.url}")
   private String dbUrl;
   
@@ -16,7 +17,9 @@ public class DatabaseConfig {
   
   @Value("${spring.datasource.username}")
   private String dbusername;
-
+  
+  
+  // connect to PostgreSQL-database
   @Bean
   public DataSource dataSource() {
       HikariConfig config = new HikariConfig();
