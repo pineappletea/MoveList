@@ -11,13 +11,13 @@
 	<!-- (String name, String videoUrl, String description, MoveType movetype, Position position)  --> 
 		
 		<table class="table table-striped">
-		<tr> <th>Name</th> <th>Type</th> <th>Position</th> <th>Video URL</th> <th>description</th> <th></th> 
-		<th></th> 
+		<tr> <th>Name</th> <th>Type</th> <th>In Position?</th> <th>Position</th> <th>Video URL</th> <th>Description</th> <th></th>  
 		<th></th>
 		</tr>
 		<tr th:each="move : ${moves}">
 		<td th:text="${move.name}"></td>
 		<td th:text="${move.movetype}? ${move.movetype.name} : 'Unmarked'"></td>
+		<td th:text="${move.inposition}"></td>
 		<td th:text="${move.position}? ${move.position.name} : 'Unmarked'"></td>
 		<td th:text="${move.videoUrl}"></td>
 		<td th:text="${move.description}"></td>

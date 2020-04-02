@@ -40,54 +40,8 @@ public class Move {
     @JsonIgnore
     @JoinColumn(name = "position")
     private Position position;
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getVideoUrl() {
-		return videoUrl;
-	}
-
-	public void setVideoUrl(String videoUrl) {
-		this.videoUrl = videoUrl;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public MoveType getMovetype() {
-		return movetype;
-	}
-
-	public void setMovetype(MoveType movetype) {
-		this.movetype = movetype;
-	}
-
-	public Position getPosition() {
-		return position;
-	}
-
-	public void setPosition(Position position) {
-		this.position = position;
-	}
+	
+	// to string
 
 	@Override
 	public String toString() {
@@ -144,6 +98,61 @@ public class Move {
 		// TODO Auto-generated constructor stub
 	}
     
+    // getters and setters
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getVideoUrl() {
+		return videoUrl;
+	}
+
+	public void setVideoUrl(String videoUrl) {
+		this.videoUrl = videoUrl;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public MoveType getMovetype() {
+		return movetype;
+	}
+
+	public void setMovetype(MoveType movetype) {
+		this.movetype = movetype;
+	}
+
+	public Position getPosition() {
+		return position;
+	}
+
+	public void setPosition(Position position) {
+		this.position = position;
+	}
+	public boolean isInposition() {
+		return inposition;
+	}
+	public void setInposition(boolean inposition) {
+		this.inposition = inposition;
+	}
+	
     
     
 

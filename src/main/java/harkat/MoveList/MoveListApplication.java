@@ -45,8 +45,8 @@ public class MoveListApplication {
 			movetyperepository.save(positioning);
 			
 			// Positions
-			Position fullguard = new Position("full guard");
-			positionrepository.save(fullguard);
+			Position guard = new Position("guard");
+			positionrepository.save(guard);
 			Position sidecontrol = new Position("sidecontrol");
 			positionrepository.save(sidecontrol);
 			Position halfguard = new Position("half guard");
@@ -64,9 +64,9 @@ public class MoveListApplication {
 			moverepository.save(americana);
 			Move doubleleg = new Move("Double Leg Takedown", "https://www.youtube.com/watch?v=wxNAEByjOoA", "", takedown, standing, true);
 			moverepository.save(doubleleg);
-			Move scissorsweep = new Move("The Scissor Sweep", "https://youtu.be/UBf7uF5x8GQ", "", sweep, fullguard, true);
+			Move scissorsweep = new Move("The Scissor Sweep", "https://youtu.be/UBf7uF5x8GQ", "", sweep, guard, true);
 			moverepository.save(scissorsweep);
-			Move trianglechoke = new Move("Triangle Choke", "https://www.youtube.com/watch?v=ICiYVLNRsRU", "", choke, fullguard, true);
+			Move trianglechoke = new Move("Triangle Choke", "https://www.youtube.com/watch?v=ICiYVLNRsRU", "", choke, guard, true);
 			moverepository.save(trianglechoke);
 			Move armbar = new Move("Armbar from mount", "https://www.youtube.com/watch?v=5uuU0LfsZOY", "", lock, mount, true);
 			moverepository.save(armbar);

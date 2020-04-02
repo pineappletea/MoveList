@@ -8,7 +8,7 @@ import javax.sql.DataSource;
 @Configuration
 public class DatabaseConfig {
 	
-	// fetch values from applcation.properties for database login
+	// fetch values from application.properties for database login
   @Value("${spring.datasource.url}")
   private String dbUrl;
   
