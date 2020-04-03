@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Add Position</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+
+	<h1>Add Position</h1>
+
+	<form action="#" th:action="@{/addposition}" th:object=${position}
+		method="post">
+		<p>
+			Name: <input type="text" th:field="${position.name}" />
+		</p>
+		<p>
+			<input type="submit" value="Submit" /> <input type="reset"
+				value="Reset" />
+		</p>
+	</form>
+
+</body>
+</html>

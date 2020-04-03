@@ -51,7 +51,6 @@ public class MoveController {
 		model.addAttribute("positions", positionrepository.findAll());
 		return "addmove";
 	}
-	// TODO: FRONT
 
 	// Receive and save new move
 	@PreAuthorize("hasAuthority('ADMIN')")
@@ -84,6 +83,41 @@ public class MoveController {
 		moverepository.save(move);
 		return "redirect:../index";
 	}
+
+	// Create new position and pass to form GET
+	@PreAuthorize("hasAuthority('ADMIN')")
+	@RequestMapping(value = "/addposition", method = RequestMethod.GET)
+	public String getNewPositionForm(Model model) {
+		model.addAttribute("position", new Position());
+		return "addposition";
+	}
+
+	// Receive and save new move POST
+	@PreAuthorize("hasAuthority('ADMIN')")
+	@RequestMapping(value = "/addposition", method = RequestMethod.POST)
+	public String savePosition(@ModelAttribute Position position) {
+		positionrepository.save(position);
+		return "redirect:/index";
+	}
+
+	// Create new movetype and pass to form GET
+	@PreAuthorize("hasAuthority('ADMIN')")
+	@RequestMapping(value = "/addmovetype", method = RequestMethod.GET)
+	public String getNewMoveTypeForm(Model model) {
+		model.addAttribute("movetype", new MoveType());
+		return "addmovetype";
+	}
+	
+	// Receive and save new move POST
+	@PreAuthorize("hasAuthority('ADMIN')")
+	@RequestMapping(value = "/addmovetype", method = RequestMethod.POST)
+	public String savePosition(@ModelAttribute MoveType movetype) {
+		movetyperepository.save(movetype);
+		return "redirect:/index";
+	}
+
+	
+	
 
 	// RESTfull service methods
 

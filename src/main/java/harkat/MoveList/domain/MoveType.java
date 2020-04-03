@@ -69,6 +69,7 @@ public class MoveType {
 		// TODO Auto-generated constructor stub
 	}
 	
+	// default constructor with name only
 	public MoveType(String name) {
 		super();
 		this.name = name;
