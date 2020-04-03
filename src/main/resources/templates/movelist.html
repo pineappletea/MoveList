@@ -8,7 +8,6 @@
 <body>
 	<h1 th:inline="text"> Brazilian Jiu-Jitsu Techniques </h1>
 	
-	<!-- (String name, String videoUrl, String description, MoveType movetype, Position position)  --> 
 		
 		<table class="table table-striped">
 		<tr> <th>Name</th> <th>Type</th> <th>In Position?</th> <th>Position</th> <th>Video URL</th> <th>Description</th> <th></th>  
@@ -34,6 +33,8 @@
 		
 		<a sec:authorize="isAnonymous()" th:href="@{/login}" class="btn btn-success" >Log in</a>
 		<a sec:authorize="hasAuthority('ADMIN')" th:href="@{/addmove}" class="btn btn-success" >Add move</a>
+		<a sec:authorize="hasAuthority('ADMIN')" th:href="@{/addmovetype}" class="btn btn-success" >Add movetype</a>
+		<a sec:authorize="hasAuthority('ADMIN')" th:href="@{/addposition}" class="btn btn-success" >Add position</a>
 		<form sec:authorize="hasAuthority('ADMIN')" th:action="@{/logout}" method="post">
 			<input type="submit" value="Sign Out" class="btn btn-danger"/>
 		</form>
