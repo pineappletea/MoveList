@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 public class MoveType {
 	
@@ -22,6 +24,7 @@ public class MoveType {
 	private String name;
 	
 	@Column
+	@JsonBackReference
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "movetype")
 	private List<Move> moves;
 

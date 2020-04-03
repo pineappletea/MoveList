@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 
 @Entity
@@ -33,11 +34,13 @@ public class Move {
 	
     @ManyToOne
     @JsonIgnore
+    @JsonManagedReference
     @JoinColumn(name = "movetype")
     private MoveType movetype;
     
     @ManyToOne
     @JsonIgnore
+    @JsonManagedReference
     @JoinColumn(name = "position")
     private Position position;
 	
