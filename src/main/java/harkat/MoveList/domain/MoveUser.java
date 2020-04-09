@@ -3,8 +3,10 @@ package harkat.MoveList.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name= "moveuser")
 public class MoveUser {
 	
 	@Id
@@ -43,7 +45,6 @@ public class MoveUser {
 
 	public MoveUser() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public MoveUser(String username, String password, String role) {

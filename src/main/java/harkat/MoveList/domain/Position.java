@@ -66,7 +66,6 @@ public class Position {
 
 	public Position() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Position(String name) {
 		super();

@@ -66,7 +66,6 @@ public class MoveType {
 
 	public MoveType() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	// default constructor with name only

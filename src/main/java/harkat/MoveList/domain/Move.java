@@ -95,7 +95,6 @@ public class Move {
 
 	public Move() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
     
     // getters and setters

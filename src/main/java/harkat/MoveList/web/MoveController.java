@@ -107,7 +107,7 @@ public class MoveController {
 		model.addAttribute("movetype", new MoveType());
 		return "addmovetype";
 	}
-	
+
 	// Receive and save new move POST
 	@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(value = "/addmovetype", method = RequestMethod.POST)
@@ -116,8 +116,15 @@ public class MoveController {
 		return "redirect:/index";
 	}
 
-	
-	
+	// REST home
+	@RequestMapping(value = { "/rest", "/api", "/resthome"})
+	public String showRESTHome() {
+		return "resthome";
+	}
+
+
+
+
 
 	// RESTfull service methods
 

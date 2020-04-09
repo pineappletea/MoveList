@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>REST home</title>
+</head>
+<body>
+<h1> List of available REST-APIs </h1>
+
+<h2> All Moves </h2>
+	<p>
+		<strong>GET </strong><strong> /moves </strong> <strong>
+		<a href="/moves">/moves</a></strong>
+	</p>
+	<p>
+		<strong>JSON Example:</strong>
+	</p>
+	<pre><code>[{
+    "name": "Cross Collar Choke",
+    "videoUrl": "https://www.youtube.com/watch?v=5tQmr_iYzBo",
+    "description": "",
+    "inposition": true,
+    "id": 11,
+    "movetype": {
+      "movetypeid": 3,
+      "name": "choke"
+    },
+    "position": {
+      "positionid": 9,
+      "name": "mount"
+    },
+  {
+    "name": "Americana",
+    "videoUrl": "https://www.youtube.com/watch?v=Zhh4W24rwrw",
+    "description": "",
+    "inposition": true,
+    "id": 12,
+    "movetype": {
+      "movetypeid": 2,
+      "name": "lock"
+    },
+    "position": {
+      "positionid": 7,
+      "name": "sidecontrol"
+    }
+  }]
+</code></pre>
+
+<h2> Single Move by Id </h2>
+	<p>
+		<strong>GET </strong><strong> /moves/{id} </strong> <strong>
+		<a href="/moves/12">/moves/12</a></strong>
+	</p>
+	<p>
+		<strong>JSON Example:</strong>
+	</p>
+	<pre><code>{
+  "name": "Americana",
+  "videoUrl": "https://www.youtube.com/watch?v=Zhh4W24rwrw",
+  "description": "",
+  "inposition": true,
+  "id": 12,
+  "movetype": {
+    "movetypeid": 2,
+    "name": "lock"
+  },
+  "position": {
+    "positionid": 7,
+    "name": "sidecontrol"
+  }
+}
+</code></pre>
+
+<h2> All Positions </h2>
+	<p>
+		<strong>GET </strong><strong> /positions </strong> <strong>
+		<a href="/positions">/positions</a></strong>
+	</p>
+	<p>
+		<strong>JSON Example:</strong>
+	</p>
+	<pre><code>[
+  {
+    "positionid": 6,
+    "name": "guard"
+  },
+  {
+    "positionid": 7,
+    "name": "sidecontrol"
+  },
+  {
+    "positionid": 8,
+    "name": "half guard"
+  },
+  {
+    "positionid": 9,
+    "name": "mount"
+  },
+  {
+    "positionid": 10,
+    "name": "standing"
+  }
+]
+</code></pre>
+
+<h2> All Types </h2>
+	<p>
+		<strong>GET </strong><strong> /movetypes </strong> <strong>
+		<a href="/movetypes">/movetypes</a></strong>
+	</p>
+	<p>
+		<strong>JSON Example:</strong>
+	</p>
+	<pre><code>[
+  {
+    "movetypeid": 1,
+    "name": "takedown"
+  },
+  {
+    "movetypeid": 2,
+    "name": "lock"
+  },
+  {
+    "movetypeid": 3,
+    "name": "choke"
+  },
+  {
+    "movetypeid": 4,
+    "name": "sweep"
+  },
+  {
+    "movetypeid": 5,
+    "name": "positioning"
+  }
+]
+</code></pre>
+
+
+
+</body>
+</html>
