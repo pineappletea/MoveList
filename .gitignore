@@ -111,5 +111,6 @@ buildNumber.properties
 
 src/main/resources/application.properties
 
+# test
 
 # End of https://www.gitignore.io/api/java,maven,eclipse
