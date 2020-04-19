@@ -109,7 +109,7 @@ buildNumber.properties
 .mvn/wrapper/maven-wrapper.jar
 .flattened-pom.xml
 
-application.properties
+src/main/resources/application.properties
 
 
 # End of https://www.gitignore.io/api/java,maven,eclipse
