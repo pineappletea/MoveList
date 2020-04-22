@@ -19,11 +19,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private UserDetailServiceImpl userDetailsService;	
     
     
-    // Allowing everyone access to everything for the development phase
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-        .authorizeRequests().antMatchers("/css/**", "/index", "/movelist", "/moves", "/**").permitAll()
+        .authorizeRequests().antMatchers("/css/**", "/index", "/movelist", "/moves", "/").permitAll()
+        .antMatchers("/**").hasAuthority("ADMIN")
         .and()
         .authorizeRequests()
         	.anyRequest()
@@ -35,7 +36,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
           .permitAll()
           .and()
       .logout()
-          .permitAll();
+          .permitAll()
+          .logoutSuccessUrl("/index");
     }
     
     @Autowired
