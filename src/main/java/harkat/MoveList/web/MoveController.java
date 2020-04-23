@@ -3,6 +3,8 @@ package harkat.MoveList.web;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.validation.BindingResult;
 
 import harkat.MoveList.domain.Move;
 import harkat.MoveList.domain.MoveRepository;
@@ -55,7 +58,7 @@ public class MoveController {
 	// Receive and save new move
 	@PreAuthorize("hasAuthority('ADMIN')")
 	@RequestMapping(value = "/addmove", method = RequestMethod.POST)
-	public String saveMove(@ModelAttribute Move move) {
+	public String saveMove(@Valid @ModelAttribute Move move, BindingResult bindingresult) {
 		moverepository.save(move);
 		return "redirect:/index";
 	}
@@ -79,7 +82,7 @@ public class MoveController {
 
 	// Save move after edits, POST
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public String saveEditedMove(Move move) {
+	public String saveEditedMove(@Valid @ModelAttribute Move move, BindingResult bindingresult) {
 		moverepository.save(move);
 		return "redirect:../index";
 	}

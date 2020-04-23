@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -22,6 +23,7 @@ public class Position {
 	@NotNull
 	public Long positionid;
 	
+	@Size(min=3, max=20)
 	@Column(name= "name", nullable = false)
 	private String name;
 	

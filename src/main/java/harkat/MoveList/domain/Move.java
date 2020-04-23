@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -15,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Entity
 public class Move {
 	
+	@Size(min=5, max=40)
 	@Column(name= "name", nullable = false)
 	private String name;
 	
