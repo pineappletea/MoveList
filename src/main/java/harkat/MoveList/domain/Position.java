@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -18,6 +19,7 @@ public class Position {
 	@Id
 	@Column
     @GeneratedValue(strategy=GenerationType.AUTO)
+	@NotNull
 	public Long positionid;
 	
 	@Column(name= "name", nullable = false)

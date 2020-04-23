@@ -2,6 +2,7 @@ package harkat.MoveList;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -91,8 +92,7 @@ public class MoveListApplication {
 				log.info(move.toString());
 			}
 
-			// Create user: admin/admin
-			MoveUser user2 = new MoveUser("admin", "$2a$10$0MMwY.IQqpsVc1jC8u7IJ.2rT8b0Cd3b3sfIBGV2zfgnPGtT4r0.C", "ADMIN");
+			MoveUser user2 = new MoveUser("admin", "$2y$10$XPzhgZu6PPwWcmtFB3NyQOV0u1K3Enn/eTSddFe2td/dSRa2./.sm", "ADMIN");
 			log.info(user2.toString());
 			urepository.save(user2);
 			
